@@ -1,8 +1,17 @@
 import React from 'react';
+import {
+  Box,
+} from '@chakra-ui/react';
+
+
 
 const Nav = () => {
   return (
-    <div>Nav</div>
+    <>
+      <Box>
+        Nav
+      </Box>
+    </>
   )
 }
 
