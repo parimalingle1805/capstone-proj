@@ -13,6 +13,7 @@ import {
     Box,
     Input,
   } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 
 const BookingForm = (props) => {
@@ -26,7 +27,10 @@ const BookingForm = (props) => {
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
     today = yyyy + '-' + mm + '-' + dd;
-    console.log("Today" + today);
+    console.log("Today: " + today);
+
+
+
     const handleSubmit = () => {
 
     };
@@ -45,7 +49,7 @@ const BookingForm = (props) => {
                         min={today}
                     />
                     <FormControl isRequired>
-                    <FormLabel>Time</FormLabel>
+                    <FormLabel>Time slots available</FormLabel>
                         <Select placeholder='Select time'
                             value={props.availableTime}
                             onChange={(e) => {
@@ -90,7 +94,9 @@ const BookingForm = (props) => {
                             <option>Anniversary</option>
                         </Select>
                     </FormControl>
-                    <Button type='submit' m={4} colorScheme='blue'>Button</Button>
+                    <Button type='submit' m={4} colorScheme='blue'>
+                        <Link to="/bookingConfirmation">Reserve</Link>
+                    </Button>
                 </FormControl>
             </form>
         </Box>
